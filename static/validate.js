@@ -15,14 +15,3 @@ function validText(txt) {
         }
     }
 }
-
-function validNum(num) {
-    var bt = document.getElementById('submit');
-    var ele = document.getElementById('num').value;
-
-    if (ele > 0) {
-        bt.disabled = false;
-        return true;
-    }
-    
-}

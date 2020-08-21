@@ -4,7 +4,6 @@ from flask import Flask, redirect, render_template, request, session
 from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import func
-from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import login_required, lookup, validate
 
@@ -22,19 +21,18 @@ def after_request(response):
     response.headers["Pragma"] = "no-cache"
     return response
 
-# app.config["SESSION_FILE_DIR"] = mkdtemp()
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-ENV = 'prod'
+ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:[password]@localhost/tradingwheels'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ppqbnamgkqeuiy:e069805fcaf078c6dfdc5df2a4dc19bdf0e4b08675106088bf7f6c8e5d8e05c5@ec2-184-72-236-57.compute-1.amazonaws.com:5432/d2831hbofhonnk'
+    app.config['SQLALCHEMY_DATABASE_URI'] = ''
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
