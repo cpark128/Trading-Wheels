@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block active_left %}
+    <li class="nav-item">
+        <a class="nav-link" href="/about#navbar">About</a>
+    </li>
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/add">Add Cash</a>
+            <a class="dropdown-item" href="/buy">Buy</a>
+            <a class="dropdown-item" href="/sell">Sell</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Logout</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/">Portfolio</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/history">History <span class="sr-only">(current)</span></a>
+    </li>
+{% endblock %}
+
+{% block main %}
+    <h1>Transaction History</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Transacted</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in history %}
+                <tr>
+                    <td>{{ row.symbol }}</td>
+                    <td>{{ row.shares }}</td>
+                    <td>{{ row.price }}</td>
+                    <td>{{ row.time }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

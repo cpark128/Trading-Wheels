@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block hero %}
+    <div class="hero">
+        <h1>Trading Wheels</h1>
+    </div>
+    <a class="scroll-text" href="#navbar"><strong>Scroll</strong></a>
+    <div class="scroll">
+        <a href="#navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </a>
+    </div>
+{% endblock %}
+
+{% block about %}
+    <li class="nav-item active">
+        <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+    </li>
+{% endblock %}
+
+{% block active_left %}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/add">Add Cash</a>
+            <a class="dropdown-item" href="/buy">Buy</a>
+            <a class="dropdown-item" href="/sell">Sell</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout">Logout</a>
+        </div>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/">Portfolio</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/history">History</a>
+    </li>
+{% endblock %}
+
+{% block active_right %}
+    <li class="nav-item">
+        <a class="nav-link" href="/register">Register</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+    </li>
+{% endblock %}
+
+{% block main %}
+    <div class="content-container">
+        <div class="section-1">
+            <h2>About Trading Wheels</h2>
+            <p>
+                Trading Wheels is a platform for beginning traders to learn the basics about the stock market and experiment by managing their own portfolio.
+                This platform was inspired by CS50 and Investopedia's Stock Simulator. Trading Wheels enforces risk management, offers fractional shares, and expands stock order types!
+                Click on a card to learn about each topic at Investopedia.
+            </p>
+            <!--<div class="row row-cols-1 row-cols-md-2">-->
+            <div class="row row-cols-1 row-cols-md-2">
+                <div class="col mb-4">
+                    <div class="card">
+                        <a class="card-link" href="https://www.investopedia.com/terms/r/risk.asp">
+                            <img src="static/riskmanagement.png" class="card-img-top card-img" alt="Risk Management">
+                            <div class="card-body">
+                                <h5 class="card-title">Risk Management</h5>
+                                <p class="card-text">The market and some stocks in particular can be volatile and its direction won't always be up. 
+                                    It is crucial to manage risk and you can practice on this free platform!</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card">
+                        <a class="card-link" href="https://www.investopedia.com/terms/f/fractionalshare.asp" target="_blank">
+                            <img src="static/fractionalshares.jpeg" class="card-img-top card-img" alt="Fractional Shares">
+                            <div class="card-body">
+                                <h5 class="card-title">Fractional Shares</h5>
+                                <p class="card-text">Can't afford a full share? Do not worry! With fractional shares, you can purchase portions of shares to diversify your portfolio even more.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card">
+                        <a class="card-link" href="https://www.investopedia.com/investing/basics-trading-stock-know-your-orders/" target="_blank">
+                            <img src="static/ordertypes.png" class="card-img-top card-img" alt="Stock Order Types">
+                            <div class="card-body">
+                                <h5 class="card-title">Order Types</h5>
+                                <p class="card-text">Practice executing various stock order types beyond simple market orders. 
+                                    Learn about Limit Orders and Stop Orders to get your desired stock at a desirable price!</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col mb-4">
+                    <div class="card">
+                        <a class="card-link" href="https://www.investopedia.com/options-basics-tutorial-4583012" target="_blank">
+                            <img src="static/options.png" class="card-img-top card-img" alt="Options Trading">
+                            <div class="card-body">
+                                <h5 class="card-title">Options Trading</h5>
+                                <p class="card-text">Trading options can be intimidating at first, but it doesn't have to be like that. 
+                                    Options can provide more opportunities when used appropriately. 
+                                    On the other hand, it can be extremely dangerous without the proper knowledge. </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+              </div>
+        </div>
+        <!--
+        <div class="section-2">
+            <h3>The Journey</h3>
+            <p>
+                Hello! My name is Andrew Park, an undergrad student at the University of Maryland, College Park. I major in Computer Engineering with a minor in cybersecurity.
+                For the summer of 2020, I wanted to expand and demonstrate my skills beyond what's taught in the classroom. While searching for resources and opportunities, I came across Harvard's CS50 online course.
+                Initially I was attracted by the Python and SQL modules, but I started strong by starting at the very beginning where I reviewed my programming fundamentals. 
+                
+            </p>
+        </div>
+        -->
+    </div>
+{% endblock %}

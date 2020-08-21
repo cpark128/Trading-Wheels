@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block about %}
+    <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+    </li>
+{% endblock %}
+
+{% block active_right %}
+    <li class="nav-item">
+        <a class="nav-link" href="/register">Register</a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+    </li>
+{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" oninput="validText(this)">
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" oninput="validText(this)">
+        </div>
+        <button class="btn btn-primary" type="submit" id="submit" disabled>Log In</button>
+    </form>
+{% endblock %}
